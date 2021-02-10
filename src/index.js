@@ -30,7 +30,10 @@ app.get('/', (req, res) => {
 });
 // app.use('/api/logs', logs);
 const postapi = require("./routes/postRoute");
-app.use("/api/post",postapi)
+const getapi = require("./routes/getRoutes");
+
+app.use("/api/post",postapi);
+app.use("/api/get",getapi);
 
 app.use(middlewares.notFound);
 
